@@ -36,7 +36,7 @@ async function getStoryById(id: string) {
       `,
       author: {
         name: "Amara Sari",
-        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+        avatar: "/travel-stories/1-avatar.jpeg",
         bio: "Marine biologist & underwater photographer",
         location: "Jakarta, Indonesia",
         social: {
@@ -44,12 +44,12 @@ async function getStoryById(id: string) {
           website: "www.amarasari.com",
         },
       },
-      coverImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop",
+      coverImage: "/travel-stories/1-cover.jpg",
       images: [
-        "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+        "/travel-stories/1-1.jpg",
+        "/travel-stories/1-2.jpg",
+        "/travel-stories/1-3.jpg",
+        "/travel-stories/1-4.jpg",
       ],
       location: "Raja Ampat, Papua Barat",
       readTime: 8,
@@ -88,7 +88,7 @@ async function getStoryById(id: string) {
       `,
       author: {
         name: "Maya Putri",
-        avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+        avatar: "/travel-stories/2-avatar.jpeg",
         bio: "Cultural historian & travel writer",
         location: "Yogyakarta, Indonesia",
         social: {
@@ -96,11 +96,12 @@ async function getStoryById(id: string) {
           website: "www.mayaputri.com",
         },
       },
-      coverImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+      coverImage: "/hero-2.jpeg",
       images: [
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1555400082-8c5cd5b3c3d1?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600&h=400&fit=crop",
+        "/travel-stories/2-1.jpeg",
+        "/travel-stories/2-2.jpeg",
+        "/travel-stories/2-3.jpeg",
+        "/travel-stories/2-4.jpeg",
       ],
       location: "Borobudur, Jawa Tengah",
       readTime: 6,
@@ -145,7 +146,7 @@ async function getStoryById(id: string) {
       `,
       author: {
         name: "David Chen",
-        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+        avatar: "/travel-stories/3-avatar.jpeg",
         bio: "Wildlife photographer & conservationist",
         location: "Singapore",
         social: {
@@ -153,11 +154,12 @@ async function getStoryById(id: string) {
           website: "www.davidchenwildlife.com",
         },
       },
-      coverImage: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=1200&h=600&fit=crop",
+      coverImage: "/travel-stories/3-cover.jpeg",
       images: [
-        "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1597149254774-4d6e2d6b0b8e?w=600&h=400&fit=crop",
+        "/travel-stories/3-1.jpeg",
+        "/travel-stories/3-2.jpeg",
+        "/travel-stories/3-3.jpeg",
+        "/travel-stories/3-4.jpeg",
       ],
       location: "Tanjung Puting, Kalimantan",
       readTime: 10,

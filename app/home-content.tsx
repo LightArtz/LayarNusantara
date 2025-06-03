@@ -62,7 +62,7 @@ const featuredStories = [
     title: "Dawn of the Sea Wanderers",
     excerpt: "In the pristine waters of Raja Ampat, where coral gardens bloom beneath crystal waves...",
     author: "Amara Sari",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop",
+    image: "featured-1.jpeg",
     location: "Raja Ampat, Papua",
     readTime: "8 min",
   },
@@ -71,7 +71,7 @@ const featuredStories = [
     title: "Whispers of Ancient Stones",
     excerpt: "As dawn breaks over the ancient temple of Borobudur, the stones seem to whisper stories...",
     author: "Maya Putri",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+    image: "/featured-2.jpeg",
     location: "Borobudur, Central Java",
     readTime: "6 min",
   },
@@ -80,7 +80,7 @@ const featuredStories = [
     title: "The Emerald Heart of Borneo",
     excerpt: "Deep in the rainforests of Kalimantan, where orangutans swing through ancient canopies...",
     author: "David Chen",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600&h=400&fit=crop",
+    image: "/featured-3.jpeg",
     location: "Kalimantan",
     readTime: "10 min",
   },
@@ -91,21 +91,21 @@ const cultureHighlights = [
     id: "1",
     title: "Sacred Dance of Bali",
     description: "Where movement becomes prayer in temple ceremonies",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    image: "culture-1.jpeg",
     region: "Bali",
   },
   {
     id: "2",
     title: "Toraja's Living Heritage",
     description: "Ancient traditions echo through generations",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+    image: "culture-2.jpeg",
     region: "South Sulawesi",
   },
   {
     id: "3",
     title: "The Wisdom of Batik",
     description: "Stories written in wax and dye",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
+    image: "culture-3.jpeg",
     region: "Central Java",
   },
 ]
@@ -435,7 +435,7 @@ export default function HomeContent() {
 
       {/* Travel Stories Preview */}
       <section className="py-24 bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-6">
           <div className="flex justify-between items-center mb-12">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Travel Stories</h2>
@@ -449,7 +449,7 @@ export default function HomeContent() {
             </Link>
           </div>
 
-          <div className="relative max-w-7xl mx-auto">
+          <div className="relative max-w-3xl mx-auto">
             <Card className="overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 h-full border-0 bg-white">
               <div className="relative h-64">
                 <Image
@@ -589,7 +589,7 @@ export default function HomeContent() {
                 <div className="space-y-6">
                   <div className="relative h-36 rounded-xl overflow-hidden shadow-xl">
                     <Image
-                      src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop"
+                      src="local-1.jpeg"
                       alt="Local Culinary Experience"
                       fill
                       className="object-cover"
@@ -597,7 +597,7 @@ export default function HomeContent() {
                   </div>
                   <div className="relative h-44 rounded-xl overflow-hidden shadow-xl">
                     <Image
-                      src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=250&fit=crop"
+                      src="local-2.jpeg"
                       alt="Traditional Homestay"
                       fill
                       className="object-cover"
@@ -607,7 +607,7 @@ export default function HomeContent() {
                 <div className="space-y-6 mt-12">
                   <div className="relative h-44 rounded-xl overflow-hidden shadow-xl">
                     <Image
-                      src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=250&fit=crop"
+                      src="local-3.jpeg"
                       alt="Cultural Experience"
                       fill
                       className="object-cover"
@@ -615,7 +615,7 @@ export default function HomeContent() {
                   </div>
                   <div className="relative h-36 rounded-xl overflow-hidden shadow-xl">
                     <Image
-                      src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=300&h=200&fit=crop"
+                      src="local-4.jpeg"
                       alt="Adventure Tours"
                       fill
                       className="object-cover"

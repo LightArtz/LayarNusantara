@@ -20,15 +20,15 @@ const featuredStories = [
       "The boat gently rocked as the first rays of sunlight painted the horizon in shades of gold and crimson. Below us, a world of wonder awaited—coral gardens that have thrived for millennia, schools of fish that move like living rainbows, and the gentle giants of the sea that call these waters home.",
     author: {
       name: "Amara Sari",
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
+      avatar: "/travel-stories/1-avatar.jpeg",
       bio: "Marine biologist & underwater photographer",
       location: "Jakarta, Indonesia",
     },
-    coverImage: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop",
+    coverImage: "/travel-stories/1-cover.jpg",
     images: [
-      "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=400&h=300&fit=crop",
+      "/travel-stories/1-1.jpg",
+      "/travel-stories/1-2.jpg",
+      "/travel-stories/1-3.jpg",
     ],
     location: "Raja Ampat, Papua Barat",
     readTime: 8,
@@ -47,14 +47,14 @@ const featuredStories = [
       "Each carved relief tells a story, each Buddha statue holds a prayer. Walking through these corridors at sunrise, I felt the weight of centuries and the lightness of spiritual awakening all at once.",
     author: {
       name: "Maya Putri",
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+      avatar: "/travel-stories/2-avatar.jpeg",
       bio: "Cultural historian & travel writer",
       location: "Yogyakarta, Indonesia",
     },
-    coverImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop",
+    coverImage: "/travel-stories/2-cover.jpeg",
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
-      "https://images.unsplash.com/photo-1555400082-8c5cd5b3c3d1?w=400&h=300&fit=crop",
+      "/travel-stories/2-1.jpeg",
+      "/travel-stories/2-2.jpeg",
     ],
     location: "Borobudur, Jawa Tengah",
     readTime: 6,
@@ -73,12 +73,12 @@ const featuredStories = [
       "The jungle breathes with a life of its own. Every step reveals new wonders—exotic birds with feathers like jewels, plants that seem from another world, and the haunting calls of creatures that have roamed these forests for millions of years.",
     author: {
       name: "David Chen",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      avatar: "/travel-stories/3-avatar.jpeg",
       bio: "Wildlife photographer & conservationist",
       location: "Singapore",
     },
-    coverImage: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800&h=600&fit=crop",
-    images: ["https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=400&h=300&fit=crop"],
+    coverImage: "/travel-stories/3-cover.jpeg",
+    images: ["/travel-stories/3-1.jpeg", "/travel-stories/3-2.jpeg"],
     location: "Tanjung Puting, Kalimantan",
     readTime: 10,
     publishedAt: "2024-01-05",
@@ -95,8 +95,8 @@ const testimonials = [
       "I never imagined a simple boat ride to Raja Ampat would change my view of the world. The silence, the reef, the people... everything felt sacred.",
     author: "Sarah Wilson",
     location: "Melbourne, Australia",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop",
+    avatar: "/travel-stories/testimonial-avatar-1.jpeg",
+    image: "/travel-stories/testimonial-1.jpeg",
   },
   {
     id: "2",
@@ -104,17 +104,17 @@ const testimonials = [
       "The stories shared here inspired my own journey to Indonesia. Now I understand why they call it the Emerald of the Equator.",
     author: "Marco Rodriguez",
     location: "Barcelona, Spain",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+    avatar: "/travel-stories/testimonial-avatar-2.jpeg",
+    image: "/travel-stories/testimonial-2.jpeg",
   },
   {
     id: "3",
     quote:
-      "Borobudur at sunrise wasn't just a tourist experience—it was a spiritual awakening that I'll carry with me forever.",
+      "Mount Bromo at sunrise wasn't just a tourist experience—it was a spiritual awakening that I'll carry with me forever.",
     author: "Yuki Tanaka",
     location: "Tokyo, Japan",
-    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=600&h=400&fit=crop",
+    avatar: "/travel-stories/testimonial-avatar-3.jpeg",
+    image: "/travel-stories/testimonial-3.jpeg",
   },
 ]
 
@@ -124,27 +124,27 @@ const showcaseDestinations = [
     title: "Flavors of Padang Streets",
     excerpt: "A culinary adventure through the bustling streets of Padang, discovering authentic Minangkabau cuisine.",
     author: "Rudi Hartono",
-    coverImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=600&h=400&fit=crop",
+    coverImage: "/travel-stories/showcase-1.jpeg",
     location: "Padang, Sumatera Barat",
     readTime: 5,
-    color: "from-red-700 to-orange-600",
+    color: "from-stone-700 to-slate-700",
   },
   {
     id: "5",
     title: "Sunrise Over Bromo",
     excerpt: "The ethereal beauty of Mount Bromo at sunrise, a moment that changes your perspective on life.",
     author: "Lisa Chen",
-    coverImage: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?w=600&h=400&fit=crop",
+    coverImage: "/travel-stories/showcase-2.jpeg",
     location: "Bromo, Jawa Timur",
     readTime: 4,
-    color: "from-purple-700 to-indigo-700",
+    color: "from-stone-700 to-slate-700",
   },
   {
     id: "6",
     title: "Komodo's Ancient Guardians",
     excerpt: "Face to face with the last dragons on Earth in the rugged landscapes of Komodo National Park.",
     author: "James Mitchell",
-    coverImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+    coverImage: "/travel-stories/showcase-3.jpeg",
     location: "Komodo Island, NTT",
     readTime: 7,
     color: "from-stone-700 to-slate-700",
@@ -468,10 +468,6 @@ export default function TravelStoriesContent() {
                         <MapPin className="w-3 h-3 mr-1" />
                         <span>{showcaseDestinations[0].location}</span>
                       </div>
-                      <div className="flex items-center text-sm">
-                        <Clock className="w-3 h-3 mr-1" />
-                        <span>{showcaseDestinations[0].readTime} min</span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -543,12 +539,12 @@ export default function TravelStoriesContent() {
               <Card className="overflow-hidden shadow-xl transition-all duration-500 h-80">
                 <div className="relative h-full overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop"
+                    src="/travel-stories/showcase-4.jpeg"
                     alt="Traditional Villages"
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-green-800 to-emerald-700 opacity-70" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-700 to-slate-700 opacity-70" />
 
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 cursor-default">
@@ -564,7 +560,7 @@ export default function TravelStoriesContent() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center text-sm">
                         <MapPin className="w-3 h-3 mr-1" />
-                        <span>Various Locations</span>
+                        <span>Flores, NTT</span>
                       </div>
                       <div className="flex items-center text-sm">
                         <Clock className="w-3 h-3 mr-1" />
