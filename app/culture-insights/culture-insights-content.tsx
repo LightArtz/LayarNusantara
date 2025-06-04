@@ -248,12 +248,13 @@ export default function CultureInsightsContent() {
 
           {/* Saman: The Dance of a Thousand Hands - Improved visibility */}
           <div className="mb-24 bg-gradient-to-br from-gray-100 to-gray-200 text-white rounded-2xl overflow-hidden">
-            <div className="relative h-[400px]">
+            <div className="relative h-[300px]">
               <Image
                 src="/culture-insights/4-cover.jpeg"
                 alt="Saman Dance Performance"
                 fill
                 className="object-cover"
+                style={{ objectPosition: 'center 15%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/90"></div>
               <div className="absolute bottom-0 left-0 w-full p-8">
@@ -279,7 +280,7 @@ export default function CultureInsightsContent() {
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="relative h-48 rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+                    src="/culture-insights/4-1.jpeg"
                     alt="Saman Dance Detail"
                     fill
                     className="object-cover"
@@ -287,7 +288,7 @@ export default function CultureInsightsContent() {
                 </div>
                 <div className="relative h-48 rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1555400082-8c5cd5b3c3d1?w=400&h=300&fit=crop"
+                    src="/culture-insights/4-2.jpeg"
                     alt="Saman Performers"
                     fill
                     className="object-cover"
@@ -295,7 +296,7 @@ export default function CultureInsightsContent() {
                 </div>
                 <div className="relative h-48 rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=400&h=300&fit=crop"
+                    src="/culture-insights/4-3.jpeg"
                     alt="Saman Performance"
                     fill
                     className="object-cover"
