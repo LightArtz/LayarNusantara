@@ -4,6 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, MapPin } from "lucide-react"
+import Image from "next/image"
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,8 +23,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-              <MapPin className="w-5 h-5 text-white" />
+            <div className="flex items-center justify-center">
+              <Image 
+                src="/logo.jpeg"
+                alt="LayarNusantara Logo"
+                width={32}
+                height={32}
+                className="object-cover"
+              />
             </div>
             <span className="text-xl font-bold text-gray-900">LayarNusantara</span>
           </Link>

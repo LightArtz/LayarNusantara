@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { MapPin, Mail, Phone, Instagram, Facebook, Twitter } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -9,8 +10,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-white" />
+              <div className="w-8 h-8 flex items-center justify-center">
+                <Image 
+                src="/logo.jpeg"
+                alt="LayarNusantara Logo"
+                width={32}
+                height={32}
+                className="object-cover"
+              />
               </div>
               <span className="text-xl font-bold">LayarNusantara</span>
             </div>

@@ -22,8 +22,8 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { Toast } from "@radix-ui/react-toast"
 import { toast } from "sonner"
+import Chatbot from "@/components/chatbot/Chatbot";
 
 const heroSlides = [
   {

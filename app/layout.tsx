@@ -3,13 +3,16 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Toaster } from "sonner"
 import "./globals.css"
+import Chatbot from "@/components/chatbot/Chatbot"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "LayarNusantara - Discover Local Indonesian Experiences",
   description: "Platform promosi bisnis lokal Indonesia untuk traveler",
-    generator: 'v0.dev'
+  icons: {
+    icon: "logo.jpeg"
+  }
 }
 
 export default function RootLayout({
@@ -22,6 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <main>{children}</main>
         <Toaster position="top-right" richColors />
+        <Chatbot />
       </body>
     </html>
   )
