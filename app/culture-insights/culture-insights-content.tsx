@@ -12,7 +12,7 @@ export default function CultureInsightsContent() {
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40 z-10" />
 
         <Image
-          src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&h=1080&fit=crop"
+          src="/culture-insights/hero.jpeg"
           alt="Indonesian Cultural Heritage"
           fill
           className="object-cover"
@@ -46,7 +46,7 @@ export default function CultureInsightsContent() {
 
             <div className="relative w-full h-[500px] mb-8 rounded-xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop"
+                src="/culture-insights/1-cover.jpeg"
                 alt="Balinese Sacred Dance"
                 fill
                 className="object-cover"
@@ -83,7 +83,7 @@ export default function CultureInsightsContent() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               <div className="relative h-64 rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+                  src="/culture-insights/1-1.jpeg"
                   alt="Balinese Dance Detail"
                   fill
                   className="object-cover"
@@ -91,7 +91,7 @@ export default function CultureInsightsContent() {
               </div>
               <div className="relative h-64 rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1555400082-8c5cd5b3c3d1?w=400&h=300&fit=crop"
+                  src="/culture-insights/1-2.jpeg"
                   alt="Balinese Temple"
                   fill
                   className="object-cover"
@@ -99,7 +99,7 @@ export default function CultureInsightsContent() {
               </div>
               <div className="relative h-64 rounded-lg overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=400&h=300&fit=crop"
+                  src="/culture-insights/1-3.jpeg"
                   alt="Balinese Ceremony"
                   fill
                   className="object-cover"
@@ -112,7 +112,7 @@ export default function CultureInsightsContent() {
           <div className="mb-24">
             <div className="relative w-full h-[600px] mb-8 rounded-xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1200&h=600&fit=crop"
+                src="/culture-insights/2-cover.jpeg"
                 alt="Toraja Traditional Houses"
                 fill
                 className="object-cover"
@@ -179,7 +179,7 @@ export default function CultureInsightsContent() {
               </div>
               <div className="relative h-[600px] rounded-xl overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600&h=800&fit=crop"
+                  src="/culture-insights/2-1.jpeg"
                   alt="Toraja Funeral Ceremony"
                   fill
                   className="object-cover"
@@ -220,7 +220,7 @@ export default function CultureInsightsContent() {
               <div className="md:col-span-2 grid grid-cols-2 gap-4">
                 <div className="relative h-80 rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop"
+                    src="/culture-insights/3-1.jpeg"
                     alt="Batik Making Process"
                     fill
                     className="object-cover"
@@ -228,7 +228,7 @@ export default function CultureInsightsContent() {
                 </div>
                 <div className="relative h-80 rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1565299507317-998fe5b42c35?w=400&h=300&fit=crop"
+                    src="/culture-insights/3-2.jpeg"
                     alt="Batik Patterns"
                     fill
                     className="object-cover"
@@ -236,7 +236,7 @@ export default function CultureInsightsContent() {
                 </div>
                 <div className="relative h-80 rounded-lg overflow-hidden col-span-2">
                   <Image
-                    src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&h=300&fit=crop"
+                    src="/culture-insights/3-3.jpeg"
                     alt="Batik Fabric Display"
                     fill
                     className="object-cover"
@@ -248,9 +248,9 @@ export default function CultureInsightsContent() {
 
           {/* Saman: The Dance of a Thousand Hands - Improved visibility */}
           <div className="mb-24 bg-gradient-to-br from-gray-100 to-gray-200 text-white rounded-2xl overflow-hidden">
-            <div className="relative h-[300px]">
+            <div className="relative h-[400px]">
               <Image
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=400&fit=crop"
+                src="/culture-insights/4-cover.jpeg"
                 alt="Saman Dance Performance"
                 fill
                 className="object-cover"
