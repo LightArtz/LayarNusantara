@@ -35,9 +35,9 @@ export default function PaymentPage({ promotion }: PaymentPageProps) {
   ]
 
   const bankDetails = {
-    bankName: "Bank Central Asia (BCA)",
-    accountNumber: "1234567890",
-    accountName: "PT LayarNusantara Indonesia",
+    bankName: "BLU (BCA Digital)",
+    accountNumber: "0052 1465 3316",
+    accountName: "KELSON VINCIEN",
   }
 
   const copyToClipboard = (text: string, type: string) => {
@@ -244,7 +244,7 @@ export default function PaymentPage({ promotion }: PaymentPageProps) {
                           <p className="text-sm text-gray-600 mb-4">Scan QR code below with your mobile banking app</p>
                           <div className="inline-block p-4 bg-white rounded-lg shadow-sm">
                             <Image
-                              src="/placeholder.svg?height=200&width=200&text=QRIS+Code"
+                              src="/qris.jpg"
                               alt="QRIS Code"
                               width={200}
                               height={200}
@@ -279,7 +279,7 @@ export default function PaymentPage({ promotion }: PaymentPageProps) {
                               <div className="flex items-center">
                                 <span className="font-medium">{bankDetails.bankName}</span>
                                 <Image
-                                  src="/placeholder.svg?height=30&width=60&text=BCA"
+                                  src="/bank-logo.png"
                                   alt="Bank Logo"
                                   width={60}
                                   height={30}
