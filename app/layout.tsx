@@ -8,7 +8,7 @@ import Chatbot from "@/components/chatbot/Chatbot"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "LayarNusantara - Discover Local Indonesian Experiences",
+  title: "Layar Nusantara",
   description: "Platform promosi bisnis lokal Indonesia untuk traveler",
   icons: {
     icon: "logo.jpeg"
