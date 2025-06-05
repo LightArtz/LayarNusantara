@@ -1,28 +1,39 @@
 // components/interactive-map/InteractiveMapSection.tsx
 "use client";
 
-import React, { useState } from 'react';
-import IndonesiaMap from './IndonesiaMap'; // Ensure this path is correct
-import ProvinceInfoPanel from './ProvinceInfoPanel'; // Ensure this path is correct
-import { indonesiaMapData, type ProvinceMapData, type MapCategoryDetail } from '@/lib/map-data'; 
+import React, { useState, useCallback, useMemo } from 'react';
+import IndonesiaMap from './IndonesiaMap';
+import ProvinceInfoPanel from './ProvinceInfoPanel';
+import { indonesiaMapData, type ProvinceMapData, type MapCategoryDetail } from '@/lib/map-data';
 
 export default function InteractiveMapSection() {
   const [selectedProvince, setSelectedProvince] = useState<ProvinceMapData | null>(null);
   const [hoveredProvinceId, setHoveredProvinceId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<MapCategoryDetail | null>(null);
 
-  const handleProvinceSelect = (province: ProvinceMapData) => {
-    setSelectedProvince(province);
-    setSelectedCategory(null); 
-  };
+  const handleProvinceSelect = useCallback((province: { id: string; name: string | null }) => {
+    const fullProvince = indonesiaMapData.find(p => p.id === province.id) || null;
+    setSelectedProvince(prevSelected => {
+      // If clicking the same province, keep it selected.
+      // To implement deselection on second click:
+      // if (prevSelected?.id === province.id) {
+      //   setSelectedCategory(null);
+      //   return null;
+      // }
+      setSelectedCategory(null); 
+      return fullProvince;
+    });
+  }, []);
 
-  const handleCategorySelect = (category: MapCategoryDetail | null) => {
+  const handleCategorySelect = useCallback((category: MapCategoryDetail | null) => {
     setSelectedCategory(category);
-  };
+  }, []);
 
-  const handleProvinceHover = (provinceId: string | null) => {
+  const handleProvinceHover = useCallback((provinceId: string | null) => {
     setHoveredProvinceId(provinceId);
-  };
+  }, []);
+
+  const mapProvinces = useMemo(() => indonesiaMapData, []);
 
   return (
     <section id="explore" className="py-16 md:py-24 bg-white">
@@ -36,7 +47,7 @@ export default function InteractiveMapSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
           <IndonesiaMap
-            provinces={indonesiaMapData} // Use the full data
+            provinces={mapProvinces}
             selectedProvinceId={selectedProvince?.id || null}
             onProvinceSelect={handleProvinceSelect}
             onProvinceHover={handleProvinceHover}
