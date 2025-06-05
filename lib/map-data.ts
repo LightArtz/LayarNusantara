@@ -16,7 +16,7 @@ export interface MapCategoryDetail {
   hoverBgColor: string;
   textColor: string;
   iconColor: string;
-  borderColor?: string; // Keep this if you used it in ProvinceInfoPanel
+  borderColor?: string;
   description: string;
   content: {
     introduction: string;
@@ -34,25 +34,24 @@ export interface ProvinceMapData {
   };
 }
 
-// Provided mapping from SimpleMaps IDs to Province Names
 const simpleMapsIdToName: Record<string, string> = {
   "IDAC": "Aceh",
   "IDBA": "Bali",
-  "IDBB": "Bangka Belitung", // Corrected from "Bangka-Belitung" to match your provinces.ts likely
+  "IDBB": "Bangka Belitung",
   "IDBE": "Bengkulu",
   "IDBT": "Banten",
   "IDGO": "Gorontalo",
   "IDJA": "Jambi",
   "IDJB": "Jawa Barat",
   "IDJI": "Jawa Timur",
-  "IDJK": "DKI Jakarta", // Corrected from "Jakarta Raya" to match your provinces.ts likely
+  "IDJK": "DKI Jakarta",
   "IDJT": "Jawa Tengah",
   "IDKB": "Kalimantan Barat",
   "IDKI": "Kalimantan Timur",
   "IDKR": "Kepulauan Riau",
   "IDKS": "Kalimantan Selatan",
   "IDKT": "Kalimantan Tengah",
-  "IDKU": "Kalimantan Utara", // Corrected from "North Kalimantan"
+  "IDKU": "Kalimantan Utara",
   "IDLA": "Lampung",
   "IDMA": "Maluku",
   "IDMU": "Maluku Utara",
@@ -69,17 +68,9 @@ const simpleMapsIdToName: Record<string, string> = {
   "IDSS": "Sumatera Selatan",
   "IDST": "Sulawesi Tengah",
   "IDSU": "Sumatera Utara",
-  "IDYO": "DI Yogyakarta", // Corrected from "Yogyakarta"
-  // Add entries for the new provinces if they are in your INDONESIAN_PROVINCES list
-  // and if your SVG map from simplemaps.com includes them with specific IDs.
-  // For example, if simplemaps uses custom IDs for newer provinces:
-  // "IDPD": "Papua Barat Daya", (Example, check actual ID in SVG)
-  // "IDPG": "Papua Pegunungan",
-  // "IDPS": "Papua Selatan",
-  // "IDPT": "Papua Tengah",
+  "IDYO": "DI Yogyakarta",
 };
 
-// Create a reverse map for easier lookup: Province Name -> SVG ID
 const provinceNameToSimpleMapsId = Object.fromEntries(
   Object.entries(simpleMapsIdToName).map(([id, name]) => [name, id])
 );
@@ -100,7 +91,6 @@ const createPlaceholderContent = (provinceName: string, categoryTitle: string): 
 });
 
 const detailedProvinceDataMap = new Map<string, ProvinceMapData['categories']>([
-  // Use the Province Name as the key here for easier mapping initially
   ['Sumatera Barat', {
     tourism: { ...categoryThemes.tourism, description: 'Lakes, highlands, unique architecture.', content: { introduction: 'Explore the breathtaking natural beauty and cultural richness of West Sumatra.', items: [ { name: 'Lake Maninjau', image: '/map-images/sumbar-maninjau.jpeg', description: 'A stunning caldera lake.' }, { name: 'Harau Valley', image: '/map-images/sumbar-harau.jpeg', description: 'Dramatic cliffs and rice paddies.' }, { name: 'Pagaruyung Palace', image: '/map-images/sumbar-pagaruyung.jpeg', description: 'Minangkabau royal palace replica.' } ] } },
     artCulture: { ...categoryThemes.artCulture, description: 'Rich Minangkabau traditions.', content: { introduction: 'Dive into the vibrant Minangkabau culture.', items: [ { name: 'Randai Dance', image: '/map-images/sumbar-randai.jpeg', description: 'Traditional folk theatre performance.' }, { name: 'Songket Weaving', image: '/map-images/sumbar-songket.jpeg', description: 'Intricate hand-woven fabric.' }, { name: 'Rumah Gadang', image: '/map-images/sumbar-rumahgadang.jpeg', description: 'Traditional houses with curved roofs.' } ] } },
@@ -116,20 +106,25 @@ const detailedProvinceDataMap = new Map<string, ProvinceMapData['categories']>([
     artCulture: { ...categoryThemes.artCulture, description: 'Betawi heritage, modern arts.', content: { introduction: 'Jakarta is a melting pot of cultures, with Betawi traditions and contemporary arts.', items: [ { name: 'Taman Mini Indonesia Indah', image: '/map-images/jakarta-tmii.jpeg', description: 'Cultural park showcasing Indonesia.' }, { name: 'Setu Babakan Betawi Village', image: '/map-images/jakarta-setubabakan.jpeg', description: 'Preserves Betawi culture.' }, { name: 'National Museum', image: '/map-images/jakarta-nationalmuseum.jpeg', description: 'Archeological and historical museum.' } ] } },
     culinary: { ...categoryThemes.culinary, icon: Coffee, description: 'Street food to fine dining.', content: { introduction: 'Jakarta\'s culinary scene is diverse, offering street food and upscale dining.', items: [ { name: 'Kerak Telor', image: '/map-images/jakarta-keraktelor.jpeg', description: 'Spicy Betawi omelette.' }, { name: 'Soto Betawi', image: '/map-images/jakarta-sotobetawi.jpeg', description: 'Traditional beef and coconut milk soup.' }, { name: 'Gado-Gado', image: '/map-images/jakarta-gadogado.jpeg', description: 'Indonesian salad with peanut sauce.' } ] } },
   }],
+  // Add more provinces with detailed content here
+  ['Bangka Belitung', {
+    tourism: { ...categoryThemes.tourism, icon: Ship, description: 'Granite beaches, islands.', content: { introduction: 'Famous for its unique granite rock formations along pristine beaches and clear waters.', items: [ { name: 'Tanjung Tinggi Beach', image: '/map-images/babel-tanjungtinggi.jpeg', description: 'Iconic beach with giant granite boulders.' }, { name: 'Lengkuas Island', image: '/map-images/babel-lengkuas.jpeg', description: 'Home to a historic Dutch lighthouse.' }, { name: 'Kaolin Lake', image: '/map-images/babel-kaolin.jpeg', description: 'Picturesque blue lake in a former mine.' } ] } },
+    artCulture: { ...categoryThemes.artCulture, description: 'Malay culture, tin mining heritage.', content: { introduction: 'Influenced by Malay traditions and its history as a major tin mining region.', items: [ { name: 'Tin Mining Museum', image: '/map-images/babel-tinmuseum.jpeg', description: 'Showcases the history of tin mining.' }, { name: 'Traditional Malay Houses', image: '/map-images/placeholder-general-1.jpeg', description: 'Architectural style adapted to the tropical climate.' }, { name: 'Cidayu Dance', image: '/map-images/placeholder-general-2.jpeg', description: 'A traditional welcome dance.' } ] } },
+    culinary: { ...categoryThemes.culinary, description: 'Seafood, Mie Koba.', content: { introduction: 'Dominated by fresh seafood and unique local noodle dishes.', items: [ { name: 'Mie Koba', image: '/map-images/babel-miekoba.jpeg', description: 'Fish-based noodle soup, a local specialty.' }, { name: 'Lempah Kuning', image: '/map-images/babel-lempahkuning.jpeg', description: 'Yellow fish soup with pineapple.' }, { name: 'Gangan Darat', image: '/map-images/placeholder-general-1.jpeg', description: 'A spicy meat or fish stew.' } ] } },
+  }],
 ]);
 
 export const indonesiaMapData: ProvinceMapData[] = INDONESIAN_PROVINCES.map((provinceName) => {
-  // Get the SVG ID from your mapping, fall back to a slug if not found (though it should be found)
   const svgId = provinceNameToSimpleMapsId[provinceName] || provinceName.toLowerCase().replace(/\s+/g, '-').replace(/[().]/g, '');
   
   const categories = detailedProvinceDataMap.get(provinceName) || {
-    tourism: { ...categoryThemes.tourism, borderColor: 'border-sky-300', description: `Explore exciting destinations in ${provinceName}.`, content: createPlaceholderContent(provinceName, 'Tourism') },
-    artCulture: { ...categoryThemes.artCulture, borderColor: 'border-purple-300', description: `Discover the unique culture of ${provinceName}.`, content: createPlaceholderContent(provinceName, 'Art & Culture') },
-    culinary: { ...categoryThemes.culinary, borderColor: 'border-orange-300', description: `Taste the local flavors of ${provinceName}.`, content: createPlaceholderContent(provinceName, 'Culinary') },
+    tourism: { ...categoryThemes.tourism, description: `Explore exciting destinations in ${provinceName}.`, content: createPlaceholderContent(provinceName, 'Tourism') },
+    artCulture: { ...categoryThemes.artCulture, description: `Discover the unique culture of ${provinceName}.`, content: createPlaceholderContent(provinceName, 'Art & Culture') },
+    culinary: { ...categoryThemes.culinary, description: `Taste the local flavors of ${provinceName}.`, content: createPlaceholderContent(provinceName, 'Culinary') },
   };
   
   return {
-    id: svgId, // CRITICAL: Use the ID that will match your SVG path IDs
+    id: svgId,
     name: provinceName,
     categories,
   };

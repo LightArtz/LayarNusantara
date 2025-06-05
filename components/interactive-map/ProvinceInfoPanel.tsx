@@ -121,13 +121,13 @@ export default function ProvinceInfoPanel({
                   onClick={() => onCategorySelect(category)}
                   className={`w-full p-4 md:p-5 rounded-xl flex items-center space-x-3 md:space-x-4 text-left transition-all duration-200 ease-in-out shadow-sm hover:shadow-lg border
                               ${category.bgColor} ${category.hoverBgColor} ${category.borderColor || 'border-gray-200 hover:border-gray-300'}`}
-                  whileHover={{ scale: 1.02, y: -1 }} // Subtle lift on hover
+                  whileHover={{ scale: 1.02, y: -1 }}
                   whileTap={{ scale: 0.99 }}
                 >
                   <div className={`p-2.5 md:p-3 ${category.bgColor} border border-gray-200/50 rounded-lg flex-shrink-0 shadow-inner`}>
                     <category.icon className={`w-5 h-5 md:w-6 md:h-6 ${category.iconColor}`} />
                   </div>
-                  <div className="flex-1 min-w-0"> {/* Added min-w-0 for better text wrapping */}
+                  <div className="flex-1 min-w-0">
                     <h3 className={`text-base md:text-lg font-semibold ${category.textColor}`}>{category.title}</h3>
                     <p className={`text-xs md:text-sm ${category.textColor} opacity-80 truncate`}>{category.description}</p>
                   </div>

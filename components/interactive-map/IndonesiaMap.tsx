@@ -8,19 +8,31 @@ import { ZoomIn, ZoomOut, RotateCcw, Loader2 } from 'lucide-react';
 
 // Theme-aligned colors
 const mapColors = {
-  baseFill: "hsl(210 40% 96.1%)", // Tailwind's neutral-200/gray-200 equivalent
-  baseStroke: "hsl(210 30% 80%)",  // Darker gray for borders
-  hoverFill: "hsl(140 40% 88%)",   // A light, desaturated green (e.g., green-200/300)
-  hoverStroke: "hsl(140 40% 65%)", // A medium green for hover stroke
-  selectedFill: "hsl(147 56% 46%)", // Vibrant theme green (e.g., green-600)
-  selectedStroke: "hsl(147 56% 30%)",// Darker green for selected stroke
-  strokeWidth: "0.3px", // Use px for consistency with SVG units
+  // Base: A soft, clearly visible light stone/earth tone.
+  // This provides good contrast against a typically light page background
+  // and serves as a neutral canvas for the interactive states.
+  // Lightness is reduced significantly from previous attempts to ensure visibility.
+  baseFill: "hsl(151, 35.80%, 84.10%)",   // Hue 35 (warm, earthy), Sat 25% (muted), Lightness 88%
+  baseStroke: "hsl(35, 20%, 70%)",   // A darker, complementary stroke for clear province definition
+
+  // Hover: A gentle, inviting soft green.
+  // This is designed to be "soft but not too soft" - clearly different from the base,
+  // and a step towards the more vibrant selected state.
+  hoverFill: "hsl(130, 35%, 80%)",   // Hue 130 (soft, natural green), Sat 35%, Lightness 80%
+  hoverStroke: "hsl(130, 25%, 55%)",  // A richer stroke for the hover state
+
+  // Selected: A distinct and theme-appropriate vibrant green.
+  // This remains strong to clearly indicate the active selection.
+  selectedFill: "hsl(147, 56%, 46%)", // Your existing vibrant green, which is good for selection
+  selectedStroke: "hsl(147, 50%, 30%)", // A darker, supporting stroke for the selected province
+
+  // Stroke widths and transition remain for smooth visual feedback.
+  strokeWidth: "0.3px",
   hoverStrokeWidth: "0.45px",
   selectedStrokeWidth: "0.6px",
   transition: "fill 150ms ease-out, stroke 150ms ease-out, stroke-width 150ms ease-out",
 };
 
-// Memoized ZoomControls to prevent re-renders from TransformWrapper context changes
 const ZoomControls = React.memo(() => {
   const { zoomIn, zoomOut, resetTransform } = useControls();
   return (
@@ -38,7 +50,6 @@ const ZoomControls = React.memo(() => {
   );
 });
 ZoomControls.displayName = 'ZoomControls';
-
 
 type IndonesiaMapProps = {
   provinces: { id: string; name: string | null }[];
@@ -59,11 +70,9 @@ export default function IndonesiaMap({
   const [isLoading, setIsLoading] = useState(true);
   const [errorLoading, setErrorLoading] = useState<string | null>(null);
   const svgContainerRef = useRef<HTMLDivElement>(null);
-  // Use a ref to store the map of province IDs to their path elements
   const pathElementMapRef = useRef<Map<string, SVGPathElement>>(new Map());
   const [isMapReady, setIsMapReady] = useState(false);
 
-  // Fetch SVG content
   useEffect(() => {
     setIsLoading(true);
     setErrorLoading(null);
@@ -83,15 +92,12 @@ export default function IndonesiaMap({
       });
   }, []);
 
-  // Initialize map, find paths, and attach event listeners
   useEffect(() => {
     if (isLoading || errorLoading || !rawSvgContent || !svgContainerRef.current) {
       setIsMapReady(false);
       return;
     }
     
-    // Set the SVG content to the container
-    // This is done only when rawSvgContent changes (ideally once)
     svgContainerRef.current.innerHTML = rawSvgContent;
     const svgElement = svgContainerRef.current.querySelector('svg');
     if (!svgElement) {
@@ -108,7 +114,6 @@ export default function IndonesiaMap({
       if (pathElement) {
         newPathMap.set(province.id, pathElement);
 
-        // Clean up potential old listeners from previous renders (if any)
         const oldListeners = (pathElement as any)._currentListeners;
         if (oldListeners) {
           pathElement.removeEventListener('click', oldListeners.click);
@@ -116,7 +121,6 @@ export default function IndonesiaMap({
           pathElement.removeEventListener('mouseleave', oldListeners.mouseleave);
         }
 
-        // Define new listeners
         const clickHandler = () => onProvinceSelect(province);
         const mouseEnterHandler = () => onProvinceHover(province.id);
         const mouseLeaveHandler = () => onProvinceHover(null);
@@ -125,7 +129,6 @@ export default function IndonesiaMap({
         pathElement.addEventListener('mouseenter', mouseEnterHandler);
         pathElement.addEventListener('mouseleave', mouseLeaveHandler);
 
-        // Store them for potential cleanup
         (pathElement as any)._currentListeners = { click: clickHandler, mouseenter: mouseEnterHandler, mouseleave: mouseLeaveHandler };
 
         pathElement.style.transition = mapColors.transition;
@@ -139,7 +142,7 @@ export default function IndonesiaMap({
         titleElement.textContent = province.name;
 
       } else {
-         // console.warn(`Path element not found for province ID in SVG: ${province.id} (${province.name})`);
+        console.warn(`Path element not found for province ID in SVG: ${province.id} (${province.name})`);
         allPathsFound = false;
       }
     });
@@ -147,13 +150,15 @@ export default function IndonesiaMap({
     pathElementMapRef.current = newPathMap;
     if (newPathMap.size > 0 && allPathsFound) {
       setIsMapReady(true);
+      setErrorLoading(null); // Clear any previous path-related errors if map is now ready
     } else if (newPathMap.size === 0 && provinces.length > 0) {
-       setErrorLoading("No province paths could be identified in the SVG.");
+       setErrorLoading("No province paths could be identified in the SVG. Please check SVG IDs against map-data.ts.");
        setIsMapReady(false);
+    } else if (!allPathsFound) {
+        setErrorLoading("Some province paths could not be found. Interactions may be incomplete. Check console warnings for missing IDs.");
+        setIsMapReady(false); 
     }
 
-
-    // Cleanup listeners on component unmount or when dependencies change significantly
     return () => {
       pathElementMapRef.current.forEach(pathElement => {
         const listeners = (pathElement as any)._currentListeners;
@@ -166,8 +171,6 @@ export default function IndonesiaMap({
     };
   }, [rawSvgContent, isLoading, errorLoading, provinces, onProvinceSelect, onProvinceHover]);
 
-
-  // Apply dynamic styles (fill, stroke) to paths
   useEffect(() => {
     if (!isMapReady || pathElementMapRef.current.size === 0) return;
 
@@ -190,8 +193,7 @@ export default function IndonesiaMap({
       pathElement.setAttribute('stroke', stroke);
       pathElement.setAttribute('stroke-width', strokeWidth);
     });
-  }, [isMapReady, selectedProvinceId, hoveredProvinceId]); // Removed `provinces` as path elements are stable after mapReady
-
+  }, [isMapReady, selectedProvinceId, hoveredProvinceId]);
 
   return (
     <div 
@@ -204,7 +206,7 @@ export default function IndonesiaMap({
           <p>Loading Map of Indonesia...</p>
         </div>
       )}
-      {errorLoading && <p className="text-red-600 text-center p-4 bg-red-50 rounded-md">Error: {errorLoading}</p>}
+      {errorLoading && !isLoading && <p className="text-red-600 text-center p-4 bg-red-50 rounded-md max-w-md">Error: {errorLoading}</p>}
       
       {!isLoading && !errorLoading && rawSvgContent && (
         <TransformWrapper
@@ -219,7 +221,6 @@ export default function IndonesiaMap({
             <div 
               ref={svgContainerRef} 
               className="w-full h-full [&_svg]:w-full [&_svg]:h-full [&_svg]:object-contain"
-              // The SVG content is now set in the useEffect hook
             />
           </TransformComponent>
         </TransformWrapper>
