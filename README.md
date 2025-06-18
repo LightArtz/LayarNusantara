@@ -95,37 +95,6 @@ Follow these steps to set up the project locally:
     -   From here, administrators can review, activate, reject, or delete promotions and manage payment statuses.
 -   **Chatbot**: Click the floating chatbot icon in the bottom right corner to get assistance.
 
-## 📂 Project Structure
-LayarNusantara/
-├── app/
-│   ├── actions/ # Server actions for Supabase interactions
-│   ├── admin/ # Admin dashboard and login pages
-│   ├── components/ # Promotions page content (used within app/promotions/page.tsx)
-│   ├── culture-insights/ # Cultural insights pages
-│   ├── payment/ # Payment related pages
-│   ├── promotions/ # Promotions listing pages
-│   ├── travel-stories/ # Travel stories listing and detail pages
-│   ├── globals.css # Global Tailwind CSS styles
-│   ├── layout.tsx # Root layout for Next.js app
-│   └── page.tsx # Home page
-├── components/
-│   ├── chatbot/ # AI Chatbot components
-│   ├── interactive-map/ # Interactive map components
-│   ├── layout/ # Shared layout components (Navbar, Footer)
-│   └── ui/ # Reusable UI components (Shadcn UI derivatives)
-├── hooks/ # Custom React hooks
-├── lib/ # Utility functions, map data, Supabase client
-├── public/ # Static assets (images, SVG map)
-├── types/ # TypeScript type definitions (e.g., Promotion, TravelStory)
-├── .env.local.example # Example environment variables file
-├── components.json # Shadcn UI configuration
-├── next.config.mjs # Next.js configuration
-├── package.json # Project dependencies and scripts
-├── pnpm-lock.yaml # pnpm lock file
-├── postcss.config.mjs # PostCSS configuration
-├── tailwind.config.ts # Tailwind CSS configuration
-└── tsconfig.json # TypeScript configuration
-
 ## 🤝 Contributing
 
 Contributions are welcome! If you'd like to contribute, please fork the repository and create a pull request.
